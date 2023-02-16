@@ -1,0 +1,11 @@
+(executable
+ (name main)
+ (libraries js_of_ocaml)
+ (js_of_ocaml (flags --opt=3 --no-sourcemap --target-env=browser) (link_flags ))
+ (modes js)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
+
+(install
+  (section bin)
+  (files main.bc.js))
